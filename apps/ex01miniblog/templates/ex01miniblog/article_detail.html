@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ article.title }}
+    <small><a href="{% url 'ex01miniblog:index' %}">文章列表</a></small>
+    </h1>
+    <p>
+        <small>{{ article.created_at }}</small>
+    </p>
+    <p>{{ article.content }}</p>
+{% endblock %}

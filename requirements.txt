@@ -1,0 +1,6 @@
+Django
+django-autofixture
+django-debug-toolbar
+django-environ
+django-extensions
+docutils
