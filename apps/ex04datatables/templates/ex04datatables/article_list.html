@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load static core_tags %}
+
+{% block extrahead %}
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+{% endblock %}
+
+{% block title %}示例04：datatables.net{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        {% if article_list %}
+            <table id="article_list" style="display: none">
+                <thead>
+                <tr>
+                    {% x_var 'article_list.model._meta.fields' as fields %}
+                    {% for field in fields %}
+                        <th>{{ field.verbose_name }}</th>
+                    {% endfor %}
+                </tr>
+                </thead>
+                <tbody>
+                {% for values in article_list.values_list %}
+                    <tr>
+                        {% for value in values %}
+                            <td>{{ value|slice:':60' }}</td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    </div>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#article_list').dataTable({
+                "language": {
+                    "url": "{% static 'js/jquery.dataTables.Chinese.json' %}"
+                },
+                "initComplete": function () {
+                    $('#article_list').css('display', '');
+                }
+            });
+        });
+    </script>
+{% endblock %}

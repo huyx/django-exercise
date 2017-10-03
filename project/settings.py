@@ -36,9 +36,8 @@ INSTALLED_APPS = [
     'autofixture',
     'apps.core',
     'apps.ex01miniblog',
-
-    'django_tables2',
-    'apps.ex03tables2',
+    'apps.ex03tables2', 'django_tables2',
+    'apps.ex04datatables'
 ]
 
 MIDDLEWARE = [
