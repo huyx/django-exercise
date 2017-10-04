@@ -34,13 +34,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_extensions',
     'autofixture',
+    'explorer',
     'apps.core',
-
     'apps.dj01model',
-
     'apps.ex01miniblog',
     'apps.ex03tables2', 'django_tables2',
     'apps.ex04datatables',
+    'apps.ex08query_explorer',
 ]
 
 MIDDLEWARE = [
@@ -100,8 +100,13 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = env.str('DJANGO_LANGUAGE_CODE', 'zh-hans')
 TIME_ZONE = env.str('DJANGO_TIME_ZONE', 'Asia/Shanghai')
 USE_I18N = True
-USE_L10N = True
+USE_L10N = False
 USE_TZ = True
+
+DATE_FORMAT = 'Y-m-d'
+TIME_FORMAT = 'H:i:s'
+
+DATETIME_FORMAT = DATE_FORMAT + ' ' + TIME_FORMAT
 
 # 静态文件 (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/

@@ -23,9 +23,11 @@ urlpatterns = [
     url(r'^$', views.home),
     url(r'^admin/', admin.site.urls),
     url(r'^admindocs/', include('django.contrib.admindocs.urls')),
+    url(r'^explorer/', include('explorer.urls')),
     url(r'^ex01miniblog/', include('apps.ex01miniblog.urls', namespace='ex01miniblog')),
     url(r'^ex03tables2/', include('apps.ex03tables2.urls', namespace='ex03tables2')),
     url(r'^ex04datatables/', include('apps.ex04datatables.urls', namespace='ex04datatables')),
+    url(r'^ex08query_explorer/', include('apps.ex08query_explorer.urls', namespace='ex08query_explorer')),
 ]
 
 # 配置: django-debug-toolbar

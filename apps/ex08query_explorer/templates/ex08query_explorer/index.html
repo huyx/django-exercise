@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>模型</th>
+                <th>数据库表名称</th>
+                <th>缺省模型全名</th>
+                <th>其他模型全名</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for names in model_names %}
+                <tr class="{% if names|length > 3 %}alert-danger{% endif %}">
+                    <td>{{ names.0 }}</td>
+                    <td>{{ names.1 }}</td>
+                    <td>{{ names.2 }}</td>
+                    <td>{{ names|slice:'3:'|join:',' }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

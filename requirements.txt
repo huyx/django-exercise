@@ -1,7 +1,10 @@
 Django
 django-autofixture
 django-debug-toolbar
+django-filter
 django-environ
 django-extensions
+django-sql-explorer
 django-tables2
 docutils
+sqlparse
